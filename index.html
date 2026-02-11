@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amna 🌌💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="stars"></div>
+<div id="floating-hearts"></div>
+
+<audio id="bgMusic" src="romantic-soft.mp3" loop></audio>
+<audio id="sparkle" src="sparkle.mp3"></audio>
+
+<!-- PAGE 1 -->
+<section class="page active">
+    <h1>Amna 🌙</h1>
+    <p>Welcome to our universe...</p>
+    <button onclick="nextPage()">Enter Our Love Story 💫</button>
+</section>
+
+<!-- PAGE 2 WHY I LOVE YOU -->
+<section class="page">
+    <h2>Why I Love You 💖</h2>
+    <p id="loveText">Click the heart...</p>
+    <button onclick="showReason()" class="heart-btn">💗</button>
+    <button onclick="nextPage()">Next 🌹</button>
+</section>
+
+<!-- PAGE 3 TIMELINE -->
+<!-- OPEN WHEN LOVE LETTERS -->
+<section class="page">
+    <h2>Open When... 💌</h2>
+    <p>These are little pieces of my heart for you.</p>
+
+    <div class="letters">
+
+        <div class="letter" onclick="openLetter(this)">
+            💌 Open when you're sad
+            <div class="letter-content">
+                Babe, if you're reading this, I wish I could hold you right now.
+                Your tears matter to me. Your feelings matter to me.
+                You are never alone. I will always be here for you.
+                No matter what happens, ill always be here bringing a beautiful smile
+                on that beautiful face of yours sweetheart. I'll always make you happy,
+                I'll never ever leave you alone and always make you happy sweetheart.
+                I love you so much, Amna. Mwahhh
+            </div>
+        </div>
+
+        <div class="letter" onclick="openLetter(this)">
+            💌 Open when you miss me
+            <div class="letter-content">
+                Close your eyes and imagine me holding your face gently,
+                reminding you how much you mean to me.
+                Distance could never change what I feel for you.
+                I'll always hold your hand tightly and never ever
+                let you go babe. I'll hold you very tightly, hug you very tightly
+                and never let go my love. I Love Youu Soo Much, Amna. Mwahh
+            </div>
+        </div>
+
+        <div class="letter" onclick="openLetter(this)">
+            💌 Open when you doubt yourself
+            <div class="letter-content">
+                You are stronger than you think.
+                Smarter than you believe.
+                More beautiful than you realize.
+                I see the light in you every single day.
+                You are the prettiest woman ever with the most beautiful eyes
+                and a voice that sings a melody no musician could ever hope to recreate or best.
+                You are pretty in every way with a smile so gentle and warm it becomes my home. 
+                You are my home babe. 
+                You are the strongest woman, so brave.
+                And, Im proud of you Amna. So so proud of you sweetheart.
+                I am so so proud of you my love, and I always will be no matter what. Ill cherish you
+                always babe, and im so grateful your here, so grateful you exist, & so grateful your mine babe.
+                I love youu Amna. ♡♡♡
+            </div>
+        </div>
+
+        <div class="letter" onclick="openLetter(this)">
+            💌 Open when you can’t sleep
+            <div class="letter-content">
+                I hope this makes you smile.
+                Imagine me whispering goodnight to you,
+                telling you how grateful I am that you exist.
+            </div>
+        </div>
+
+        <div class="letter" onclick="openLetter(this)">
+            💌 Open when you need to feel loved
+            <div class="letter-content">
+                You are cherished.
+                You are chosen.
+                You are adored.
+                And I will never stop loving you. You are my wife. My beautiful girl. And I will always always and forever be here with you
+                and for you no matter what happens Amna.
+                I LOVE YOUUU SOO MUCHHH.
+            </div>
+        </div>
+
+    </div>
+
+    <button onclick="nextPage()">Next 🌹</button>
+</section>
+
+
+<!-- PAGE 4 FLOWER GARDEN -->
+<section class="page">
+    <h2>A Garden For My Queen 🌹</h2>
+    <div class="flower-gallery">
+        <img src="flower1.png">
+        <img src="flower2.png">
+        <img src="flower3.png">
+        <img src="flower4.png">
+    </div>
+    <button onclick="nextPage()">Next 👑</button>
+</section>
+
+<!-- PAGE 5 PRINCESS TREATMENT -->
+<section class="page">
+    <h2>How I Will Treat You 👑</h2>
+    <div class="promise-box">
+        <p>✨ I will protect your heart.</p>
+        <p>✨ I will choose you every day.</p>
+        <p>✨ I will support your dreams.</p>
+        <p>✨ I will spoil you with love.</p>
+        <p>✨ I will give you princess & queen treatment always.</p>
+        <p>✨ I will love you endlessly.</p>
+    </div>
+    <button onclick="nextPage()">Next 💌</button>
+</section>
+
+<!-- PAGE 6 MEMORY GALLERY -->
+<section class="page">
+    <h2>Our Memories 📸</h2>
+    <div class="gallery">
+        <img src="memory1.jpg">
+        <img src="memory2.jpg">
+        <img src="memory3.jpg">
+    </div>
+    <button onclick="nextPage()">Play A Game 💘</button>
+</section>
+
+<!-- PAGE 7 MINI GAME -->
+<section class="page">
+    <h2>Catch My Love 💖</h2>
+    <p>Catch 10 hearts to unlock something special!</p>
+    <div id="gameArea"></div>
+    <p id="score">Hearts Caught: 0</p>
+    <button id="secretBtn" onclick="nextPage()" style="display:none;">Unlock Surprise 💍</button>
+</section>
+
+<!-- PAGE 8 VIDEO -->
+<section class="page">
+    <h2>Your Cutest Moment 🎥</h2>
+    <video controls width="320">
+        <source src="amna-lipsync.mp4" type="video/mp4">
+    </video>
+    <p>You are the most adorable girl in the universe.</p>
+    <button onclick="nextPage()">Final Page 🌌</button>
+</section>
+
+<!-- PAGE 9 FINAL -->
+<section class="page">
+    <h1>Amna...</h1>
+    <p id="finalText">
+        You are my peace.<br>
+        My happiness.<br>
+        My forever.<br><br>
+        I will love you in every lifetime. 💍🌹
+    </p>
+    <button onclick="celebrate()">Click Here 🥺</button>
+</section>
+
+<!-- Hidden Message -->
+<div id="hiddenMessage">
+    💌 You found the secret...  
+    I love you more than the stars in this sky 🌌💖
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

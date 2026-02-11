@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Quicksand:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    background: radial-gradient(circle at bottom, #1b1f3b, #090a1a);
+    color: #e6ccff; /* lavender */
+     background: url("starry-sky.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* ⭐ STAR LAYERS */
+#stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Small Stars */
+#stars::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background-image:
+        radial-gradient(#ffd166 1px, transparent 1px),
+        radial-gradient(#ff99cc 1px, transparent 1px),
+        radial-gradient(#d8b4ff 1px, transparent 1px);
+    background-size: 100px 100px, 150px 150px, 200px 200px;
+    animation: moveStars 60s linear infinite;
+    opacity: 0.6;
+}
+
+/* Bigger Stars */
+#stars::after {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background-image:
+        radial-gradient(#ffd166 2px, transparent 2px),
+        radial-gradient(#ff99cc 2px, transparent 2px);
+    background-size: 250px 250px, 300px 300px;
+    animation: moveStars 120s linear infinite reverse;
+    opacity: 0.4;
+}
+
+@keyframes moveStars {
+    from { transform: translate(0,0); }
+    to { transform: translate(-500px,-500px); }
+}
+
+/* Headings */
+h1, h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    color: #ff99cc;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(255,153,204,0.7);
+}
+
+/* Paragraphs */
+p {
+    color: #d8b4ff;
+    font-size: 1.1rem;
+}
+
+/* Page Layout */
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.page.active {
+    display: flex;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(45deg, #ff99cc, #d8b4ff);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    color: #1b1f3b; /* deep indigo, NOT black */
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s ease;
+    box-shadow: 0 0 15px rgba(255,153,204,0.5);
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(216,180,255,0.8);
+}
+
+/* Boxes */
+.timeline .event,
+.promise-box p {
+    background: rgba(255,153,204,0.08);
+    border: 1px solid #ff99cc;
+    padding: 12px;
+    border-radius: 20px;
+    margin: 10px;
+    color: #e6ccff;
+    backdrop-filter: blur(6px);
+}
+
+/* Gallery & Flowers */
+.gallery img,
+.flower-gallery img {
+    width: 120px;
+    margin: 10px;
+    border-radius: 15px;
+    transition: 0.3s ease;
+    box-shadow: 0 0 15px rgba(255,153,204,0.4);
+}
+
+.gallery img:hover,
+.flower-gallery img:hover {
+    transform: scale(1.2);
+}
+
+/* Hidden Message */
+#hiddenMessage {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, #ff99cc, #d8b4ff);
+    padding: 15px;
+    border-radius: 20px;
+    display: none;
+    color: #1b1f3b;
+    box-shadow: 0 0 20px rgba(255,153,204,0.6);
+}
+/* Open When Letters */
+
+.letters {
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.letter {
+    background: rgba(255,153,204,0.08);
+    border: 1px solid #ff99cc;
+    padding: 15px;
+    border-radius: 20px;
+    margin: 12px 0;
+    cursor: pointer;
+    transition: 0.4s ease;
+    color: #e6ccff;
+    position: relative;
+    overflow: hidden;
+}
+
+.letter:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255,153,204,0.5);
+}
+
+.letter-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease;
+    margin-top: 10px;
+    color: #d8b4ff;
+    font-size: 0.95rem;
+}
+
+.letter.open .letter-content {
+    max-height: 200px;
+}
